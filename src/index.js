@@ -4,6 +4,7 @@ const http = require('http');
 const path = require('path');
 
 const app = require('./app');
+const healthRoute = require('./healthcheck');
 
 const server = http.createServer(app);
 const port = process.env.PORT || '3000';
@@ -23,12 +24,10 @@ const mount = (expressApp, base, handler) => {
 };
 
 const routerPath = process.argv[2];
-console.log(process.argv);
+const route = require(path.resolve(routerPath)); // eslint-disable-line import/no-dynamic-require
 
-console.log(path.resolve(routerPath));
-const absolutePath = require(path.resolve(routerPath));
-
-mount(app, process.env.MOUNT_PATH, absolutePath);
+mount(app, process.env.MOUNT_PATH, route);
+mount(app, process.env.MOUNT_PATH, healthRoute);
 
 app.set('port', port);
 server.listen(port);

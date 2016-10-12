@@ -4,7 +4,7 @@
   "description": "service template to create api(s) ",
   "main": "index.js",
   "scripts": {
-    "example": "babel-node src/index.js example/ping.js",
+    "example": "babel-node src/index.js example/ping",
     "lint": "eslint src",
     "build": "babel -d lib src",
     "prepublish": "npm run lint && npm run build"
