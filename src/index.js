@@ -12,7 +12,7 @@ const port = process.env.PORT || '3000';
 const onListening = () => {
   const addr = server.address();
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
-  console.log(`Listening on ${bind}`);
+  console.log(`Listening on ${bind}`); // eslint-disable-line no-console
 };
 
 const mount = (expressApp, base, handler) => {

@@ -1,0 +1,5 @@
+POST /schemavalidator HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{ "Id": "123456", "name": "Pavan", "dob": "08/06/1979", "email": "pavan@me.com", "sex": "male", "address": { "number": 32, "name": "matthew crescent", "suburb": "blacktown", "state": "nsw", "country": "australia" } }
