@@ -4,8 +4,7 @@
   "description": "service template to create api(s) ",
   "main": "index.js",
   "scripts": {
-    "example": "babel-node src/index.js example/ping",
-    "validate": "babel-node src/index.js example/schemavalidator",
+    "sqllitecrud": "babel-node src/index.js example/sqllitecrud",
     "lint": "eslint src",
     "build": "babel -d lib src",
     "prepublish": "npm run lint && npm run build"
@@ -26,7 +25,10 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
+    "es6-error": "^4.0.2",
     "express": "^4.14.0",
-    "joi": "^10.2.2"
+    "joi": "^10.2.2",
+    "knex": "^0.12.6",
+    "sqlite3": "^3.1.8"
   }
 }

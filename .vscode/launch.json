@@ -10,7 +10,7 @@
             "name": "Launch Program",
             "program": "${workspaceRoot}/src/index.js",
             "cwd": "${workspaceRoot}/src",
-            "args": [ "${workspaceRoot}/example/schemavalidator" ]
+            "args": [ "${workspaceRoot}/example/UserController" ]
         },
         {
             "type": "node",

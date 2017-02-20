@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 const http = require('http');
-const path = require('path');
 
 const app = require('./app');
-const healthRoute = require('./healthcheck');
+const userRoute = require('./routes/user');
+const addressRoute = require('./routes/address');
+const healthRoute = require('./routes/healthcheck');
 
 const server = http.createServer(app);
 const port = process.env.PORT || '3000';
@@ -23,11 +24,9 @@ const mount = (expressApp, base, handler) => {
   }
 };
 
-const routerPath = process.argv[2];
-const route = require(path.resolve(routerPath)); // eslint-disable-line import/no-dynamic-require
-
-mount(app, process.env.MOUNT_PATH, route);
 mount(app, process.env.MOUNT_PATH, healthRoute);
+mount(app, process.env.MOUNT_PATH, userRoute);
+mount(app, process.env.MOUNT_PATH, addressRoute);
 
 app.set('port', port);
 server.listen(port);
