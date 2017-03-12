@@ -1,4 +1,6 @@
-NOTE: Never place any file that in migrations folder that should not be executed
+NOTES: 
+1. This solution uses simple mount technique to play with express routes. For a comprehensive solution checkout https://github.com/ptpavankumar/service-template-with-db 
+2. Never place any file that in migrations folder that should not be executed
 
 // Database setup commands
 
